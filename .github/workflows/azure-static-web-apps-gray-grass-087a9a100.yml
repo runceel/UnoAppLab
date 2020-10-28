@@ -31,7 +31,9 @@ jobs:
           app_artifact_location: "bin/Release/netstandard2.0/publish" 
           ###### End of Repository/Build Configurations ######
           # app_build_command: dotnet publish UnoAppLab/UnoAppLab.Wasm/UnoAppLab.Wasm.csproj -c Release
-          app_build_command: dotnet publish -c Release
+          app_build_command: |
+            dotnet restore
+            dotnet publish -c Release --no-restore
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'

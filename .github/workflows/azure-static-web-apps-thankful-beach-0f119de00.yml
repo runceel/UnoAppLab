@@ -19,7 +19,7 @@ jobs:
         with:
           submodules: true
       - name: build
-        run: dotnet publish UnoAppLab/UnoAppLab.Wasm/UnoAppLab.Wasm.csproj -c Release -o dist
+        run: dotnet publish UnoAppLab/UnoAppLab.Wasm/UnoAppLab.Wasm.csproj -c Release -o ./dist
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v0.0.1-preview
